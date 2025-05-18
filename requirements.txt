@@ -8,5 +8,6 @@ keras
 nltk
 matplotlib
 seaborn
-torch 
-protobuf==3.20.3
+torch
+protobuf==3.19.6
+     
