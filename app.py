@@ -193,6 +193,7 @@ st.markdown('''
 @st.cache_resource
 def load_resources():
     train = pd.read_csv('data/processed_train.csv')
+    st.write("Đã load xong data")
     tfidf_vec = TfidfVectorizer(max_features=10000).fit(train['text'])
     bog_vec = CountVectorizer(max_features=10000).fit(train['text'])
     binary_vec = CountVectorizer(max_features=10000, binary=True).fit(train['text'])
@@ -216,6 +217,7 @@ def load_resources():
     model.add(Dense(3, activation='softmax'))
     model.load_weights('weights/lstm.h5')
     lstm_model = model
+    st.write("Đã load xong model")
     total_word = 10000
     token = Tokenizer(num_words=total_word)
     token.fit_on_texts(train['text'])
